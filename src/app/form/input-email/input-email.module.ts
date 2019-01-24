@@ -1,10 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { InputEmailComponent } from './input-email/input-email.component';
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
-  declarations: []
+  declarations: [
+    InputEmailComponent
+  ],
+  exports: [
+    InputEmailComponent
+  ]
 })
 export class InputEmailModule { }
