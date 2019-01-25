@@ -6,6 +6,7 @@ import { InputEmailComponent } from './form/input-email/input-email/input-email.
 import { InputEmailModule } from 'src/app/form/input-email/input-email.module';
 import { InputPasswordModule } from 'src/app/form/input-password/input-password.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     InputEmailModule,
     InputPasswordModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

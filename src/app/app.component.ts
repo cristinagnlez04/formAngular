@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +9,28 @@ import { FormGroup, FormControl, Validators, FormBuilder, AbstractControl } from
 
 
 export class AppComponent {
-  formInputEmail: FormGroup;
-  formInputPassword: FormGroup;
+  // formInputEmail: FormGroup;
+  // formInputPassword: FormGroup;
+  formLogin: FormGroup;
+  value: any;
+  constructor() {
 
-  constructor(private fb: FormBuilder) {
-
-    this.formInputEmail = new FormGroup({
+    this.formLogin = new FormGroup({
       'email': new FormControl({ value: '', disabled: false },
         [Validators.required,
+        Validators.email,
         Validators.pattern('[a-z0-9._%+-]+@[a-z09.-]+\.[a-z]{2,3}$')
-        ])
-
+        ]),
+      'password': new FormControl({ value: '', disabled: false }, [Validators.required, Validators.minLength(4)])
     });
+  }
+
+  saveLogin() {
+    if (this.formLogin.valid) {
+      console.log(this.formLogin.value);
+    }
+    else {
+      console.log("ERROR");
+    }
   }
 }

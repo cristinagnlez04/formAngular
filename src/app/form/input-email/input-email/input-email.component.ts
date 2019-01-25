@@ -18,26 +18,20 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 export class InputEmailComponent implements ControlValueAccessor {
   @Input() disabled: boolean;
-  @Input() label: string;
 
   innerValue: any = '';
   onChangeFn = (_: any) => { };
-  onTouched = () => { };
 
   constructor(private render: Renderer2, private element: ElementRef) { }
 
-  onEmailChange(event) {
-
-    this.onTouched();
+  onEmailChange(value) {
+    this.onChangeFn(value);
+    this.innerValue = value;
+    console.log('input email ', value);
   }
 
   writeValue(value: any): void {
     this.innerValue = value || '';
-
-    if (value) {
-      this.render.addClass(this.element.nativeElement, 'effect');
-    }
-
   }
 
   registerOnChange(fn: any): void {
@@ -45,7 +39,6 @@ export class InputEmailComponent implements ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouched = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {
