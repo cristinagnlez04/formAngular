@@ -14,7 +14,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   styleUrls: ['./input-password.component.css']
 })
 
-
 export class InputPasswordComponent implements ControlValueAccessor {
   @Input() disabled: boolean;
   @Input() label: string;
@@ -25,9 +24,10 @@ export class InputPasswordComponent implements ControlValueAccessor {
 
   constructor(private render: Renderer2, private element: ElementRef) { }
 
-  onPasswordChange(event) {
-
-    this.onTouched();
+  onPasswordChange(value) {
+    this.onChangeFn(value);
+    this.innerValue = value;
+    console.log('input password ', value);
   }
 
   writeValue(value: any): void {
