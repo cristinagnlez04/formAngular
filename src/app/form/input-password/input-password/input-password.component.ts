@@ -11,12 +11,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     multi: true
   }],
   templateUrl: './input-password.component.html',
-  styleUrls: ['./input-password.component.css']
+  styleUrls: ['./input-password.component.scss']
 })
 
 export class InputPasswordComponent implements ControlValueAccessor {
   @Input() disabled: boolean;
-  @Input() label: string;
 
   innerValue: any = '';
   onChangeFn = (_: any) => { };

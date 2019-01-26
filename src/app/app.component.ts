@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 
 

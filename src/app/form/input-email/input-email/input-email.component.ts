@@ -12,7 +12,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     multi: true
   }],
   templateUrl: './input-email.component.html',
-  styleUrls: ['./input-email.component.css']
+  styleUrls: ['./input-email.component.scss']
 })
 
 
