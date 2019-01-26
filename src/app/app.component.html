@@ -1,5 +1,10 @@
+<!-- <app-header-login>
+
+
+</app-header-login> -->
+
 <form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
-  <h2>Input Email</h2>
+
   <div>
     <app-input-email formControlName="email">
     </app-input-email>
@@ -12,8 +17,6 @@
       <p>Correo Inválido</p>
     </div>
   </div>
-
-  <h2>Input Password</h2>
 
   <div>
     <app-input-password formControlName="password">
@@ -28,7 +31,9 @@
     </div>
   </div>
 
+  <div>
+    <app-button-login></app-button-login>
+  </div>
 
-  <button type="submit" [disabled]="formLogin.invalid">Enviar</button>
 
 </form>
