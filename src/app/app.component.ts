@@ -7,10 +7,7 @@ import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/fo
   styleUrls: ['./app.component.scss']
 })
 
-
 export class AppComponent {
-  // formInputEmail: FormGroup;
-  // formInputPassword: FormGroup;
   formLogin: FormGroup;
   value: any;
   constructor() {
