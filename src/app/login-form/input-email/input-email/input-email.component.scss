@@ -8,7 +8,7 @@
   -o-font-smoothing: antialiased;
   font-smoothing: antialiased;
   height: 80px;
-  margin: 0; // padding: 0;
+  margin: 0;
   width: 100%;
   bottom: 0px;
   box-sizing: border-box;
@@ -19,31 +19,22 @@
     left: 0px;
     width: 100%;
     background-color: #BBC5CA;
-    top: 55px;
-  }
-  &:hover {
-    &:before {
-      content: '';
-      height: 2px;
-      background-color: red;
-      -webkit-transition: .2s;
-      transition: .2s;
-      transform: translate(1px);
-    }
+    top: 65px;
   }
   input {
     position: relative;
     height: 24px;
     width: 100%;
     background-color: transparent;
-    top: 28px;
+    top: 33px;
     box-sizing: border-box;
     outline: none;
     border: none;
   }
   label {
     position: relative;
-    top: 6px;
+    top: 16px;
     font-family: 'Roboto', sans-serif;
+    z-index: -1;
   }
 }

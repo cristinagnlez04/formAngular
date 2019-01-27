@@ -1,41 +1,35 @@
-
 import { Component, Input, forwardRef, Renderer2, ElementRef } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-input-password',
+  selector: 'app-input-email',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => InputPasswordComponent),
+    useExisting: forwardRef(() => InputEmailComponent),
     multi: true
   }],
-  templateUrl: './input-password.component.html',
-  styleUrls: ['./input-password.component.scss']
+  templateUrl: './input-email.component.html',
+  styleUrls: ['./input-email.component.scss']
 })
 
-export class InputPasswordComponent implements ControlValueAccessor {
+
+export class InputEmailComponent implements ControlValueAccessor {
   @Input() disabled: boolean;
 
   innerValue: any = '';
   onChangeFn = (_: any) => { };
-  onTouched = () => { };
 
   constructor(private render: Renderer2, private element: ElementRef) { }
 
-  onPasswordChange(value) {
+  onEmailChange(value) {
     this.onChangeFn(value);
     this.innerValue = value;
-    console.log('input password ', value);
+    console.log('input email ', value);
   }
 
   writeValue(value: any): void {
     this.innerValue = value || '';
-
-    if (value) {
-      this.render.addClass(this.element.nativeElement, 'effect');
-    }
-
   }
 
   registerOnChange(fn: any): void {
@@ -43,7 +37,6 @@ export class InputPasswordComponent implements ControlValueAccessor {
   }
 
   registerOnTouched(fn: any): void {
-    this.onTouched = fn;
   }
 
   setDisabledState(isDisabled: boolean): void {

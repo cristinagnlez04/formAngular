@@ -1,7 +1,6 @@
-<!-- <app-header-login>
-
-
-</app-header-login> -->
+<div>
+  <app-header-login></app-header-login>
+</div>
 
 <form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
 
@@ -13,7 +12,7 @@
       <p>Correo Requerido</p>
     </div>
 
-    <div *ngIf="!formLogin.controls['email'].errors?.valid && (formLogin.controls['email'].dirty || formLogin.controls['email'].touched)">
+    <div *ngIf="!formLogin.controls['email'].valid && (formLogin.controls['email'].dirty || formLogin.controls['email'].touched)">
       <p>Correo Inválido</p>
     </div>
   </div>
@@ -31,8 +30,8 @@
     </div>
   </div>
 
-  <div>
-    <app-button-login></app-button-login>
+  <div class="buttonContainer">
+    <button type="submit" [disabled]="formLogin.invalid"> Enviar </button>
   </div>
 
 

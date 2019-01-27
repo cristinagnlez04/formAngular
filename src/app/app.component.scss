@@ -1,4 +1,6 @@
 :host {
+  background: url('src/assets/img/img3.jpg') no-repeat center;
+  background-size: cover;
   display: inline-block;
   position: absolute;
   -webkit-font-smoothing: antialiased;
@@ -12,14 +14,31 @@
   height: 100%;
   form {
     position: relative;
-    border: 1px solid red;
-    border-radius: 5px; // padding: 17px;
     width: 50%; // padding-top: 65px;
-    top: 25%;
+    top: 15%;
     left: 25%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    opacity: 0.5;
+    float: left;
+    margin: auto;
+    background-color: #999;
+  }
+  .buttonContainer {
+    position: relative;
+    height: 80px;
+  }
+  button {
+    position: relative;
+    width: 50%;
+    left: 25%;
+    top: 25%;
+    padding: 0.5rem 2rem;
+    border: 0.1rem solid rgb(56, 113, 179); // border-radius: 0.5rem;
+    font-size: inherit;
+    color: cornsilk;
+    background-color: rgb(56, 113, 179);
   } //   .message {
   //     color: red;
   //     font-family: 'Times New Roman', Times, serif;

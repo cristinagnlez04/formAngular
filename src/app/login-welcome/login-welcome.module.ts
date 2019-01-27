@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonLoginComponent } from './button-login/button-login.component';
+import { LoginWelcomeComponent } from './login-welcome/login-welcome.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    ButtonLoginComponent
+    LoginWelcomeComponent
   ],
   exports: [
-    ButtonLoginComponent
+    LoginWelcomeComponent
   ]
 })
-export class ButtonLoginModule { }
+export class LoginWelcomeModule { }
