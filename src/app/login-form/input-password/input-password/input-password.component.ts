@@ -15,8 +15,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 
 export class InputPasswordComponent implements ControlValueAccessor {
-  valueBlur: any;
   valueFocus: any;
+  valueBlur: any;
+
   @Input() disabled: boolean;
 
   innerValue: any = '';
@@ -26,39 +27,23 @@ export class InputPasswordComponent implements ControlValueAccessor {
   constructor(private render: Renderer2, private element: ElementRef) { }
 
   onFocus(event) {
-    console.log("ON FOCUS");
-    this.valueFocus = event;
-    if (this.valueFocus || this.valueFocus !== '') {
-      this.render.addClass(this.element.nativeElement, 'effect');
-      console.log("FOCUS Dentro!!!! " + this.valueFocus);
-    } else {
-      this.render.removeClass(this.element.nativeElement, 'effect');
-      console.log("FOCUS - NO HACE NADA");
-    }
+    this.valueFocus = event.target.value;
+    this.render.addClass(this.element.nativeElement, 'effect');
   }
 
   onBlur(event) {
-    this.valueBlur = event;
-    if (this.valueBlur || this.valueBlur === '') {
+    this.valueBlur = event.target.value;
+
+    if (this.valueBlur === '') {
       this.render.removeClass(this.element.nativeElement, 'effect');
-      console.log("BLUR Dentro!!!");
     } else {
-      console.log("BLUR - NO HACE NADA");
+      this.render.addClass(this.element.nativeElement, 'onBlur');
     }
   }
 
   onPasswordChange(value) {
     this.onChangeFn(value);
     this.innerValue = value;
-    console.log('input password ', value);
-
-    // if (this.innerValue !== '') {
-    //   this.render.addClass(this.element.nativeElement, 'effect');
-    //   console.log('DENTRO DE IF ' + this.innerValue);
-    // }
-    // else {
-    //   this.render.removeClass(this.element.nativeElement, 'effect');
-    // }
   }
 
   writeValue(value: any): void {
