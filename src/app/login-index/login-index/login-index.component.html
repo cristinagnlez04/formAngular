@@ -1,0 +1,35 @@
+<section>
+  <form [formGroup]="formLogin" (ngSubmit)="saveLogin()">
+
+    <div class="inputEmail">
+      <app-input-email formControlName="email">
+      </app-input-email>
+
+      <div class="emailMessage" *ngIf="(formLogin.controls['email'].dirty || formLogin.controls['email'].touched) && formLogin.controls['email'].invalid && formLogin.controls['email'].errors?.required">
+        <span>Correo Requerido</span>
+      </div>
+
+      <div class="emailMessage" *ngIf="!formLogin.controls['email'].valid && (formLogin.controls['email'].dirty || formLogin.controls['email'].touched)">
+        <span>Correo Inválido</span>
+      </div>
+    </div>
+
+    <div class="inputPassword">
+      <app-input-password formControlName="password">
+      </app-input-password>
+
+      <div class="passMessage" *ngIf="formLogin.controls['password'].errors?.required && (formLogin.controls['password'].dirty || formLogin.controls['password'].touched)">
+        <span>Password Requerido</span>
+      </div>
+
+      <div class="passMessage" *ngIf="formLogin.controls['password'].errors?.minlength">
+        <span>Ingresar al menos 4 caracteres</span>
+      </div>
+    </div>
+
+    <div class="buttonContainer">
+      <button type="submit" [disabled]="formLogin.invalid"> Enviar </button>
+    </div>
+
+  </form>
+</section>
