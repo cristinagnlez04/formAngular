@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+:host {
+  display: inline-block; // position: absolute;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  .buttonContainer {
+    position: relative;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .passMessage {
+    position: relative;
+    bottom: 23px;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    display: block;
+  }
+  .emailMessage {
+    position: relative;
+    bottom: 18px;
+    color: red;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    display: block;
+  }
+}
