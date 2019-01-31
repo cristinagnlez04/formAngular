@@ -53,9 +53,6 @@
       left: 0px;
       width: 100%;
       transform-origin: 50%;
-      transform: scaleX(.5);
-      opacity: 0;
-      transition: background-color .3s cubic-bezier(.55, 0, .55, .2);
       background-color: rgb(39, 114, 204);
     }
   }
