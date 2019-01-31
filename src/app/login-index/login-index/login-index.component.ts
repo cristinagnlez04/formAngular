@@ -1,15 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, ElementRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Renderer2, ElementRef } from '@angular/core';
-
 
 @Component({
   selector: 'app-login-index',
   templateUrl: './login-index.component.html',
   styleUrls: ['./login-index.component.scss'],
-
 })
+
 export class LoginIndexComponent {
   formLogin: FormGroup;
   value: any;
@@ -29,7 +27,7 @@ export class LoginIndexComponent {
   saveLogin() {
     if (this.formLogin.valid) {
       this.render.removeClass(this.element.nativeElement, 'disabledButton');
-      this._router.navigate(['/welcome']);
+      this._router.navigate(['/welcome/', this.formLogin.controls['email'].value]);
     }
     else {
       console.log("ERROR");
