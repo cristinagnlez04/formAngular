@@ -4,7 +4,7 @@ import { LoginIndexComponent } from './login-index/login-index/login-index.compo
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: LoginIndexComponent },
-  { path: 'welcome', component: LoginWelcomeComponent },
+  { path: 'welcome/:email', component: LoginWelcomeComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 ];
