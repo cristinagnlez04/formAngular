@@ -17,8 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputEmailComponent implements ControlValueAccessor {
   valueBlur: any;
   valueFocus: any;
-  blur: any;
-  focus: any;
+  eventTarget: any;
   @Input() disabled: boolean;
 
   innerValue: any = '';
@@ -28,24 +27,35 @@ export class InputEmailComponent implements ControlValueAccessor {
 
   onFocus(event) {
     this.valueFocus = event.target.value;
-    this.render.addClass(this.element.nativeElement, 'effect');
+    this.eventTarget = event.target;
+    this.render.addClass(this.element.nativeElement, 'upLabel');
+
+    if (!this.eventTarget.validity.valid) {
+      this.render.addClass(this.element.nativeElement, 'error');
+    }
+    else {
+      this.render.addClass(this.element.nativeElement, 'effect');
+    }
   }
 
   onBlur(event) {
     this.valueBlur = event.target.value;
-    if (this.valueBlur === '') {
+    if (this.valueBlur === '' || this.eventTarget.validity.valid) {
       this.render.removeClass(this.element.nativeElement, 'effect');
-
-    } else {
-      this.render.addClass(this.element.nativeElement, 'onBlur');
     }
-
   }
 
   onEmailChange(value) {
     this.onChangeFn(value);
     this.innerValue = value;
-    console.log('input email ', value);
+
+    if (!this.eventTarget.validity.valid) {
+      this.render.addClass(this.element.nativeElement, 'error');
+    }
+    else {
+      this.render.addClass(this.element.nativeElement, 'effect');
+      this.render.removeClass(this.element.nativeElement, 'error');
+    }
   }
 
   writeValue(value: any): void {
