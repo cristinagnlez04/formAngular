@@ -17,10 +17,11 @@ export class LoginIndexComponent {
     this.formLogin = new FormGroup({
       'email': new FormControl({ value: '', disabled: false },
         [Validators.required,
-        Validators.email,
-        Validators.pattern('[a-z0-9._%+-]+@[a-z09.-]+\.[a-z]{2,3}$')
+        Validators.email
         ]),
-      'password': new FormControl({ value: '', disabled: false }, [Validators.required, Validators.minLength(4)])
+      'password': new FormControl({ value: '', disabled: false }, [
+        Validators.required,
+        Validators.minLength(4)])
     });
   }
 
@@ -30,7 +31,6 @@ export class LoginIndexComponent {
       this._router.navigate(['/welcome/', this.formLogin.controls['email'].value]);
     }
     else {
-      console.log("ERROR");
       this.render.addClass(this.element.nativeElement, 'disabledButton');
     }
   }

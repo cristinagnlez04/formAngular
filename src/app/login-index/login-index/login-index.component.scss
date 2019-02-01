@@ -78,6 +78,7 @@
       background-color: rgb(56, 113, 179);
       top: 20px;
       margin: 0 auto;
+      white-space: normal;
     }
   }
   .emailMessage {
@@ -103,7 +104,7 @@ section {
   height: 100%;
   padding: 0;
   margin: 0 auto;
-  position: relative; //top: 50%;
+  position: relative;
 }
 
 .login {
@@ -111,7 +112,7 @@ section {
   min-width: 100%;
   min-height: 100%;
   background-image: url('src/assets/img/img1.jpg');
-  background-position: center; // background-size: 100%;
+  background-position: center;
   margin: 0;
   padding: 0;
   background-repeat: no-repeat;

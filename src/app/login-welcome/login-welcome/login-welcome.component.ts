@@ -24,7 +24,6 @@ export class LoginWelcomeComponent implements OnInit {
   }
 
   getData(email: string) {
-    console.log('email prueba ', email);
     this.emailValue = email;
   }
 

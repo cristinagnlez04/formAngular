@@ -1,73 +1,62 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
-// .welcome {
-//   position: fixed;
-//   min-width: 100%;
-//   min-height: 100%;
-//   background-image: url('src/assets/img/img6.jpg');
-//   background-position: center; //background-size: 100%;
-//   margin: 0;
-//   padding: 0;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-size: cover;
-// }
-.container {
+:host {
+  display: inline-block;
   position: relative;
-  width: 50%;
-  display: block;
-  max-width: 800px;
-  min-height: 200px;
-  margin: 0 auto;
-  margin-top: 8%;
-  margin-bottom: 66px;
-  padding: 20px 80px;
-  background: rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  left: 0px;
-  right: 0px;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #333;
-  font-family: 'Lato', sans-serif;
-}
-
-.messageWelcome {
-  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 40px;
-  bottom: 40px;
-  color: antiquewhite;
-  font-size: 60px;
-  transition: all 2s;
-  font-family: 'Lato', sans-serif;
+  height: 100%;
+  min-width: 100%;
+  .container {
+    height: 500px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding: 20px 80px;
+    margin: 4%;
+    padding: 0;
+  }
+  .messageWelcome {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    bottom: 455px;
+    color: antiquewhite;
+    font-size: 60px;
+    transition: all 2s;
+    font-family: 'Lato', sans-serif;
+    padding-right: 140px;
+    text-align: center;
+  }
+  .messageWelcome:hover {
+    font-size: 80px;
+    color: orange;
+  }
+  img {
+    position: relative;
+    display: block;
+    margin: auto;
+    background-size: 100% auto;
+    top: 130px;
+  }
 }
 
-.messageWelcome:hover {
-  font-size: 100px;
-  color: orange;
-}
-
-// img {
-//   margin: auto;
-//   padding-bottom: 20px;
-//   width: 200px;
-//   height: 170px;
-//   background-repeat: no-repeat;
-//   background-position: 50%;
-//   border-radius: 50%;
-//   background-size: 100% auto;
+// html,
+// body {
+//   height: 100%;
 // }
+// body {
+//   display: relative;
+//   justify-content: center;
+//   align-items: center;
+//   background: #333;
+//   font-family: 'Lato', sans-serif;
+// }
+//
